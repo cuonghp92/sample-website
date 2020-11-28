@@ -6,10 +6,10 @@ phases:
       - echo Deployment started on `date`
       - echo Syncing S3 Content
       # REPLACE yourwebsite.com WITH THE NAME OF YOUR S3 BUCKET THAT HOSTS YOUR APP'S STATIC WEBSITE
-      - aws s3 mb s3://webbackend --region=us-west-1
-      - aws s3 website s3://webbackend --index-document index.html --error-document index.html
-      - aws s3api put-bucket-policy --bucket=webbackend --policy ./policy.json
-      - aws s3 sync . s3://webbackend
+      - aws s3 mb s3://webbackendd --region=us-west-1
+      - aws s3 website s3://webbackendd --index-document index.html --error-document index.html
+      - aws s3api put-bucket-policy --bucket=webbackendd --policy ./policy.json
+      - aws s3 sync . s3://webbackendd
   build:
     commands:
       - echo Invalidating CloudFront Cache
